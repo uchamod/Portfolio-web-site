@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins:["poppins","sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -16,3 +19,13 @@ export default {
   },
   plugins: [],
 } satisfies Config;
+
+
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: ["./src/**/*.{html,js}"],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// }
