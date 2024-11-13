@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Card = ({ title, description, image }) => {
   return (
-    <div className="bg-gradient-to-r from-customGold to-yellow-100 rounded-2xl shadow-xl p-6 max-w-lg justify-center">
+    <div className="bg-gradient-to-r from-customGold to-yellow-200 rounded-2xl shadow-xl p-6 sm:justify-center lg:max-w-80">
       <div className="flex justify-center items-center">
         <Image
           src={image}
@@ -21,15 +21,20 @@ const Card = ({ title, description, image }) => {
 
 const ProjectImg = ({ image }) => {
   return (
-    <div className="flex justify-center items-center p-4">
-       <a href="https://github.com/uchamod" className="cursor-pointer" target="_blank"> <Image
+    <div className="">
+      <a
+        href="https://github.com/uchamod"
+        className="cursor-pointer"
+        target="_blank"
+      >
+        {" "}
+        <Image
           src={image}
-              alt="Project"
-              layout="responsive"
-          className="flex justify-center object-cover shadow-xl"
-        /></a>
-       
-      
+          alt="Project"
+          layout="responsive"
+          className="w-full h-auto object-cover  shadow-md"
+        />
+      </a>
     </div>
   );
 };

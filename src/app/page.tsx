@@ -28,8 +28,10 @@ export default function Home() {
         {/* nav bar and hero section */}
         <section>
           {/* navigation */}
-          <nav className="container mx-auto flex justify-between items-center py-5">
-            <h2 className="text-xl font-medium">By Chamod Udara</h2>
+          <nav className="container mx-auto flex justify-between items-center py-5 md:px-12 lg:px-24">
+            <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl">
+              Hello,there...
+            </h2>
             <ul className="flex justify-between space-x-6">
               <li>
                 <MdOutlineDarkMode className="text-blue-950 hover:text-black text-2xl cursor-pointer" />
@@ -39,7 +41,7 @@ export default function Home() {
                   href="https://drive.google.com/file/d/1HA3BoRz53Wc2N3cUIeCre20BEOFAWjVJ/view?usp=sharing"
                   target="_blank"
                   download={"resume"}
-                  className="text-xl font-semibold bg-customGold py-2 px-4 rounded"
+                  className="lg:text-xl font-semibold bg-customGold py-2 px-4 rounded"
                 >
                   Resume
                 </a>
@@ -47,16 +49,16 @@ export default function Home() {
             </ul>
           </nav>
           {/* hero section */}
-          <div className="flex flex-col items-center justify-center">
-            <div className="text-center p-8  max-w-2xl space-x-4 ">
-              <h1 className="text-4xl font-semibold text-customGold">
-                Chamod Udara
+          <div className="flex flex-col items-center justify-center ">
+            <div className="text-center   max-w-2xl   lg:pb-4 md:pb-4  lg:px-0">
+              <h1 className="text-4xl lg:text-6xl lg:pb-2 font-semibold text-customGold">
+                I'm Chamod Udara
               </h1>
               <h2 className="text-xl font-semibold">
                 Mobile/Web developer | UI designer
               </h2>
               <br />
-              <p className="">
+              <p className="lg:text-xl">
                 I am an undergraduate at the University of Sri Jayewardenepura,
                 deeply passionate about technology and innovation. As a tech
                 enthusiast and continuous learner, I am committed to staying
@@ -67,9 +69,9 @@ export default function Home() {
                 expand my capabilities.
               </p>
             </div>
-
+            <br />
             {/* reference icons */}
-            <div className="flex justify-center space-x-6">
+            <div className="flex justify-center space-x-6 ">
               <a href="https://github.com/uchamod" target="_blank">
                 <FaGithub className="text-4xl cursor-pointer" />
               </a>
@@ -88,7 +90,7 @@ export default function Home() {
               <Image
                 src={Avatar}
                 alt="Profile"
-                className="w-64 h-64 rounded-full mt-6 shadow-lg object-cover"
+                className="w-64 h-64 rounded-full mt-6 shadow-lg object-cover lg:w-96 lg:h-96"
               />
             </div>
           </div>
@@ -98,7 +100,7 @@ export default function Home() {
           <div className="pb-8">
             <h1 className="text-2xl font-semibold">My Expertise</h1>
             <br />
-            <p className="">
+            <p className="lg:text-xl">
               I'm a passionate Flutter Developer,Web developer and Tech
               Enthusiast with a deep interest in building mobile and web
               applications. Always eager to explore new technologies and solve
@@ -108,7 +110,7 @@ export default function Home() {
             </p>
           </div>
           {/* cards */}
-          <div className="flex flex-wrap justify-center space-y-4 space-x-4">
+          <div className="lg:flex md:flex sm:justify-center space-y-4 lg:space-x-4 md:space-x-4 lg:flex-wrap md:flex-wrap lg:justify-center">
             <Card
               image={Flutter}
               title="Mobile development"
@@ -135,10 +137,12 @@ export default function Home() {
         <section className="pt-16">
           <div>
             <h1 className="text-2xl font-semibold pb-4">My Projects So Far</h1>
-            <ProjectImg image={Spread} />
-            <ProjectImg image={Posting} />
-            <ProjectImg image={ToDo} />
-            <ProjectImg image={Expenze} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 lg:gap-8">
+              <ProjectImg image={Spread} />
+              <ProjectImg image={Posting} />
+              <ProjectImg image={ToDo} />
+              <ProjectImg image={Expenze} />
+            </div>
           </div>
         </section>
         {/* footer */}
@@ -155,7 +159,6 @@ export default function Home() {
                 href="https://www.linkedin.com/in/chamod-udara-b3927a239/"
                 target="_blank"
               >
-               
                 <FaLinkedin className="text-3xl cursor-pointer" />
               </a>
               <a href="https://medium.com/@uchamod52" target="_blank">
