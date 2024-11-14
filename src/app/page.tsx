@@ -1,5 +1,8 @@
+"use client";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react"; //import react hook
 import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Card, ProjectImg } from "./Card.jsx";
@@ -13,8 +16,10 @@ import Posting from "/public/Frame 4.png";
 import Rect from "/public/react.png";
 import Grapic from "/public/web-template.png";
 export default function Home() {
+  //function
+  const [darkmode, setDarkMode] = useState(false);
   return (
-    <div>
+    <div className={darkmode ? "dark" : ""}>
       <Head>
         <title>My Portfolio</title>
         <meta name="discription" content="" />
@@ -24,17 +29,20 @@ export default function Home() {
           url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
         </style>
       </Head>
-      <main className="font-poppins bg-slate-100 min-h-screen px-10">
+      <main className="font-poppins bg-slate-100 min-h-screen px-10 dark:bg-black">
         {/* nav bar and hero section */}
         <section>
           {/* navigation */}
           <nav className="container mx-auto flex justify-between items-center py-5 md:px-12 lg:px-24">
-            <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl">
+            <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl dark:text-slate-100">
               Hello,there...
             </h2>
             <ul className="flex justify-between space-x-6">
               <li>
-                <MdOutlineDarkMode className="text-blue-950 hover:text-black text-2xl cursor-pointer" />
+                <MdOutlineDarkMode
+                  className="text-blue-950 hover:text-black text-2xl cursor-pointer dark:text-slate-100"
+                  onClick={() => setDarkMode(!darkmode)}
+                />
               </li>
               <li>
                 <a
@@ -54,11 +62,11 @@ export default function Home() {
               <h1 className="text-4xl lg:text-6xl lg:pb-2 font-semibold text-customGold">
                 I'm Chamod Udara
               </h1>
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-semibold dark:text-slate-100">
                 Mobile/Web developer | UI designer
               </h2>
               <br />
-              <p className="lg:text-xl">
+              <p className="lg:text-xl dark:text-slate-50">
                 I am an undergraduate at the University of Sri Jayewardenepura,
                 deeply passionate about technology and innovation. As a tech
                 enthusiast and continuous learner, I am committed to staying
@@ -73,34 +81,42 @@ export default function Home() {
             {/* reference icons */}
             <div className="flex justify-center space-x-6 ">
               <a href="https://github.com/uchamod" target="_blank">
-                <FaGithub className="text-4xl cursor-pointer" />
+                <FaGithub className="text-4xl cursor-pointer dark:text-slate-50" />
               </a>
               <a
                 href="https://www.linkedin.com/in/chamod-udara-b3927a239/"
                 target="_blank"
               >
                 {" "}
-                <FaLinkedin className="text-4xl cursor-pointer" />
+                <FaLinkedin className="text-4xl cursor-pointer dark:text-slate-50" />
               </a>
               <a href="https://medium.com/@uchamod52" target="_blank">
-                <FaMedium className="text-4xl cursor-pointer" />
+                <FaMedium className="text-4xl cursor-pointer dark:text-slate-50" />
               </a>
             </div>
-            <div>
-              <Image
-                src={Avatar}
-                alt="Profile"
-                className="w-64 h-64 rounded-full mt-6 shadow-lg object-cover lg:w-96 lg:h-96"
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <div>
+                <Image
+                  src={Avatar}
+                  alt="Profile"
+                  className="w-64 h-64 rounded-full mt-6 shadow-lg object-cover lg:w-96 lg:h-96"
+                />
+              </div>
+            </motion.div>
           </div>
         </section>
         {/* my professionce section */}
         <section className="pt-16">
           <div className="pb-8">
-            <h1 className="text-2xl font-semibold">My Expertise</h1>
+            <h1 className="text-2xl font-semibold dark:text-slate-100">
+              My Expertise
+            </h1>
             <br />
-            <p className="lg:text-xl">
+            <p className="lg:text-xl dark:text-slate-50">
               I'm a passionate Flutter Developer,Web developer and Tech
               Enthusiast with a deep interest in building mobile and web
               applications. Always eager to explore new technologies and solve
@@ -136,7 +152,9 @@ export default function Home() {
         {/* projects */}
         <section className="pt-16">
           <div>
-            <h1 className="text-2xl font-semibold pb-4">My Projects So Far</h1>
+            <h1 className="text-2xl font-semibold pb-4 dark:text-slate-100">
+              My Projects So Far
+            </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 lg:gap-8">
               <ProjectImg image={Spread} />
               <ProjectImg image={Posting} />
@@ -147,22 +165,22 @@ export default function Home() {
         </section>
         {/* footer */}
         <section>
-          <div className="border-t-4 border-gray-300 justify-center mt-8 mb-6 pt-2 ">
-            <h3 className="text-lg font-medium text-center pb-2">
+          <div className="border-t-4 border-gray-300 justify-center mt-8 pb-6 pt-2 dark:bg-black">
+            <h3 className="text-lg font-medium text-center pb-2 dark:text-slate-50">
               @Contact me for more details
             </h3>
             <div className="flex justify-center space-x-6">
               <a href="https://github.com/uchamod" target="_blank">
-                <FaGithub className="text-3xl cursor-pointer" />
+                <FaGithub className="text-3xl cursor-pointer dark:text-slate-50" />
               </a>
               <a
                 href="https://www.linkedin.com/in/chamod-udara-b3927a239/"
                 target="_blank"
               >
-                <FaLinkedin className="text-3xl cursor-pointer" />
+                <FaLinkedin className="text-3xl cursor-pointer dark:text-slate-50" />
               </a>
               <a href="https://medium.com/@uchamod52" target="_blank">
-                <FaMedium className="text-3xl cursor-pointer" />
+                <FaMedium className="text-3xl cursor-pointer dark:text-slate-50" />
               </a>
             </div>
           </div>
