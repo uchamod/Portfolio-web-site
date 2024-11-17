@@ -7,8 +7,11 @@ import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Card, ProjectImg } from "./Card.jsx";
 import Ps from "/public/adobe-photoshop.png";
+import AI from "/public/ai.png";
 import Avatar from "/public/avatar.jpg";
+import Quiz from "/public/AX8Cj.png";
 import Spread from "/public/Desktop - 1.png";
+import Employee from "/public/Employee-Management.jpg";
 import Flutter from "/public/flutter.png";
 import ToDo from "/public/Frame 2.png";
 import Expenze from "/public/Frame 294.png";
@@ -29,14 +32,15 @@ export default function Home() {
           url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500&display=swap');
         </style>
       </Head>
-      <main className="font-poppins bg-slate-100 min-h-screen px-10 dark:bg-black">
+      <main className="font-poppins bg-slate-100 min-h-screen px-10 dark:bg-customBlue">
         {/* nav bar and hero section */}
         <section>
           {/* navigation */}
           <nav className="container mx-auto flex justify-between items-center py-5 md:px-12 lg:px-24">
-            <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl dark:text-slate-100">
+            <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl dark:text-customGold">
               Hello,there...
             </h2>
+
             <ul className="flex justify-between space-x-6">
               <li>
                 <MdOutlineDarkMode
@@ -66,7 +70,7 @@ export default function Home() {
                 Mobile/Web developer | UI designer
               </h2>
               <br />
-              <p className="lg:text-xl dark:text-slate-50">
+              <p className="lg:text-xl dark:text-slate-50 dark:text-opacity-60">
                 I am an undergraduate at the University of Sri Jayewardenepura,
                 deeply passionate about technology and innovation. As a tech
                 enthusiast and continuous learner, I am committed to staying
@@ -112,11 +116,11 @@ export default function Home() {
         {/* my professionce section */}
         <section className="pt-16">
           <div className="pb-8">
-            <h1 className="text-2xl font-semibold dark:text-slate-100">
+            <h1 className="text-3xl font-semibold dark:text-customGold text-center md:text-left">
               My Expertise
             </h1>
             <br />
-            <p className="lg:text-xl dark:text-slate-50">
+            <p className="lg:text-xl dark:text-slate-50 dark:text-opacity-60 text-center md:text-left">
               I'm a passionate Flutter Developer,Web developer and Tech
               Enthusiast with a deep interest in building mobile and web
               applications. Always eager to explore new technologies and solve
@@ -126,7 +130,7 @@ export default function Home() {
             </p>
           </div>
           {/* cards */}
-          <div className="lg:flex md:flex sm:justify-center space-y-4 lg:space-x-4 md:space-x-4 lg:flex-wrap md:flex-wrap lg:justify-center">
+          <div className="lg:flex md:flex sm:justify-center space-y-6 lg:space-x-6 md:space-x-4 lg:flex-wrap md:flex-wrap lg:justify-center md:justify-center">
             <Card
               image={Flutter}
               title="Mobile development"
@@ -140,7 +144,12 @@ export default function Home() {
             <Card
               image={Grapic}
               title="UI design"
-              description="Experienced in building dynamic and efficient web applications, I use React, Next.js, and TypeScript to create responsive, scalable front-ends, and Node.js for robust backend development. With a deep understanding of Tailwind CSS, I design fast, visually appealing websites that provide seamless user experiences."
+              description="As a UI designer, I craft intuitive, user-centered interfaces using Figma to bring clarity and functionality to every design. My approach combines creativity with usability, ensuring that each project provides a smooth and visually engaging experience."
+            />
+            <Card
+              image={AI}
+              title="Machine Learning"
+              description="Experienced in machine learning, I use Google’s ML Kit to build smart, user-focused applications. I’m skilled in integrating ML models for features like predictive insights and image recognition, aiming to solve real-world challenges with innovative solutions."
             />
             <Card
               image={Ps}
@@ -150,22 +159,42 @@ export default function Home() {
           </div>
         </section>
         {/* projects */}
-        <section className="pt-16">
+        <section className="pt-20">
           <div>
-            <h1 className="text-2xl font-semibold pb-4 dark:text-slate-100">
-              My Projects So Far
+            <h1 className="text-3xl font-semibold pb-4 dark:text-customGold">
+              Exciting Projects So Far
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 lg:gap-8">
-              <ProjectImg image={Spread} />
-              <ProjectImg image={Posting} />
-              <ProjectImg image={ToDo} />
-              <ProjectImg image={Expenze} />
+              <ProjectImg
+                image={Spread}
+                url="https://github.com/uchamod/Spread_app"
+              />
+              <ProjectImg
+                image={Posting}
+                url="https://github.com/uchamod/Posting-social-media-app-flutter"
+              />
+              <ProjectImg
+                image={ToDo}
+                url="https://github.com/uchamod/flutter-NotePro"
+              />
+              <ProjectImg
+                image={Expenze}
+                url="https://github.com/uchamod/flutter-Expenz_Manager"
+              />
+              <ProjectImg
+                image={Employee}
+                url="https://github.com/uchamod/Employee_Mangement_System-V2"
+              />
+              <ProjectImg
+                image={Quiz}
+                url="https://github.com/uchamod/springboot_quiz_application_with-_microservices"
+              />
             </div>
           </div>
         </section>
         {/* footer */}
         <section>
-          <div className="border-t-4 border-gray-300 justify-center mt-8 pb-6 pt-2 dark:bg-black">
+          <div className="border-t-4 border-gray-300 justify-center mt-8 pb-6 pt-2 dark:bg-customBlue">
             <h3 className="text-lg font-medium text-center pb-2 dark:text-slate-50">
               @Contact me for more details
             </h3>

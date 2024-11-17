@@ -16,9 +16,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customBlue: '#001f3f',   // Navy Blue
+        customBlue: '#050a18',   // Navy Blue
         customGreen: '#228B22',  // Forest Green
-        customGold: '#FFD700',   // Gold
+        customGold: '#ff9636',   // Gold
         customCoral: '#FF7F50',  // Cora
       },
     },

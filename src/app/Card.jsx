@@ -3,10 +3,10 @@ import Image from "next/image";
 const Card = ({ title, description, image }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }} // Scales up on hover
+      whileHover={{ scale: 1.08 }} // Scales up on hover
       whileTap={{ scale: 0.9 }} // Scales down on tap
     >
-      <div className="bg-gradient-to-r from-customGold to-yellow-200 rounded-2xl shadow-xl p-6 sm:justify-center lg:max-w-80">
+      <div className="max-w-sm p-6 h-full rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 shadow-lg">
         <div className="flex justify-center items-center">
           <Image
             src={image}
@@ -16,15 +16,19 @@ const Card = ({ title, description, image }) => {
         </div>
 
         <div className="mt-4">
-          <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
-          <p className="text-gray-600 mt-2">{description}</p>
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-slate-100">
+            {title}
+          </h3>
+          <p className="text-gray-600 mt-2 dark:text-slate-50 dark:text-opacity-50">
+            {description}
+          </p>
         </div>
       </div>
     </motion.div>
   );
 };
 
-const ProjectImg = ({ image }) => {
+const ProjectImg = ({ image, url }) => {
   return (
     <motion.div
       whileHover={{
@@ -33,15 +37,11 @@ const ProjectImg = ({ image }) => {
         transition: { duration: 0.3, ease: "easeInOut" }, // Smooth transition
       }}
       whileTap={{
-        scale:0.8
+        scale: 0.8,
       }}
     >
       <div>
-        <a
-          href="https://github.com/uchamod"
-          className="cursor-pointer"
-          target="_blank"
-        >
+        <a href={url} className="cursor-pointer" target="_blank">
           {" "}
           <Image
             src={image}
@@ -56,3 +56,4 @@ const ProjectImg = ({ image }) => {
 };
 
 export { Card, ProjectImg };
+//bg-gradient-to-r from-customGold to-yellow-200 rounded-2xl shadow-xl p-6 sm:justify-center lg:max-w-80
