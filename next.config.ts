@@ -1,13 +1,13 @@
+const isGitHubPages = process.env.NODE_ENV === "production";
 
-const isGitHubPages = process.env.NODE_ENV === 'production';
-
-const repositoryName = 'your-repository-name'; 
+const repositoryName = "Portfolio-web-site";
 
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // /* config options here */
   output: "export", // Required to generate a static export
+  basePath: isGitHubPages ? `/${repositoryName}` : "",
   images: {
     unoptimized: true, // Disable image optimization for static export
   },
