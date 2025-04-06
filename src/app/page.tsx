@@ -38,7 +38,7 @@ export default function Home() {
           {/* navigation */}
           <nav className="container mx-auto flex justify-between items-center py-5 md:px-12 lg:px-24">
             <h2 className="md:text-2xl lg:text-2xl font-medium font-serif sm:text-xl dark:text-customGold">
-              Hi,there...
+              Hello,there...
             </h2>
 
             <ul className="flex justify-between space-x-6">
