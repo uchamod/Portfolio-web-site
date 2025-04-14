@@ -55,5 +55,5 @@ const ProjectImg = ({ image, url }) => {
   );
 };
 
-export { Card, ProjectImg };
+export default Card;
 //bg-gradient-to-r from-customGold to-yellow-200 rounded-2xl shadow-xl p-6 sm:justify-center lg:max-w-80
