@@ -1,6 +1,5 @@
 const isProd = process.env.NODE_ENV === "production";
 
-
 // const repositoryName = "Portfolio-web-site";
 
 // import type { NextConfig } from "next";
@@ -12,8 +11,10 @@ module.exports = {
   images: {
     unoptimized: true, // Disable image optimization for static export
   },
+
   basePath: "/Portfolio-web-site",
-  assetPrefix: isProd ? "/<your-repository-name>/" : "",
+  assetPrefix: isProd ? "/Portfolio-web-site/" : "",
+
   // basePath: "/Portfolio-web-site",
   // assetPrefix: "/Portfolio-web-site",
   // trailingSlash: true, // Optional: Add trailing slashes to paths
